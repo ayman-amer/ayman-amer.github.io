@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ayman Amer Showreel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@500;700&display=swap">
+<style>
+/* Layout: a screening-room programme — slate header, a vertical "reel rail" for the campaign, then wide feature cards. */
+:root{
+  --bg:#e8eeeb; --surface:#f7faf8; --ink:#10211d; --muted:#4f6460; --line:#c9d6d1; --brass:#0d7a63; --frame:#0a1412;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --arabic:"Noto Kufi Arabic","Geeza Pro","Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1614; --surface:#14211e; --ink:#e4efeb; --muted:#8fa7a1; --line:#22332f; --brass:#4fd1b0; --frame:#050a09; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1614; --surface:#14211e; --ink:#e4efeb; --muted:#8fa7a1; --line:#22332f; --brass:#4fd1b0; --frame:#050a09; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:56px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* Slate header */
+header{display:grid;gap:18px;border-bottom:1px solid var(--line);padding-bottom:32px}
+.slate{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.slate b{color:var(--brass);font-weight:500}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(56px,11vw,120px);line-height:.88;letter-spacing:.01em;text-transform:uppercase;margin:0;text-wrap:balance}
+.role{font-family:var(--display);font-weight:600;font-size:clamp(22px,3.4vw,32px);letter-spacing:.04em;text-transform:uppercase;color:var(--brass);margin:0}
+.intro{max-width:62ch;color:var(--muted);margin:0}
+.contact{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
+.contact span,.contact a{display:inline-flex;gap:8px;align-items:baseline}
+.contact small{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.contact .val{user-select:all}
+
+/* Section heads */
+section{display:grid;gap:22px}
+.sh{display:grid;gap:8px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.5vw,52px);line-height:.95;text-transform:uppercase;margin:0;text-wrap:balance}
+h2 .ar{font-family:var(--arabic);font-weight:700;font-size:.62em;text-transform:none;color:var(--muted);margin-inline-start:12px;vertical-align:.12em}
+.sh p{margin:0;max-width:64ch;color:var(--muted)}
+
+/* Media */
+video{display:block;width:100%;height:100%;object-fit:cover;background:var(--frame)}
+.screen{position:relative;background:var(--frame);border-radius:6px;overflow:hidden;max-width:100%}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;font-variant-numeric:tabular-nums}
+
+/* Reel rail — five 9:16 memorial pieces */
+.rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.rail figure{margin:0;display:grid;gap:10px;align-content:start}
+.rail .screen{aspect-ratio:9/16}
+.rail figcaption{display:grid;gap:2px;min-width:0}
+.rail .t{font-weight:600;font-size:15px;line-height:1.3}
+.rail .ar{font-family:var(--arabic);font-size:13px;color:var(--muted);direction:rtl;text-align:start}
+@media (max-width:860px){.rail{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.rail{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+
+/* Feature films */
+.films{display:grid;gap:28px}
+.film{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center;padding-block:28px;border-top:1px solid var(--line)}
+.film .screen.wide{aspect-ratio:16/9}
+.film .screen.tv{aspect-ratio:480/368}
+.film .copy{display:grid;gap:10px;min-width:0}
+.film h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:.95;text-transform:uppercase;margin:0;text-wrap:balance}
+.film p{margin:0;color:var(--muted);max-width:52ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:3px 7px;color:var(--ink)}
+@media (max-width:760px){.film{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* Toolkit strip */
+.kit{display:flex;flex-wrap:wrap;gap:8px 10px;font-size:15px}
+.kit span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 12px}
+footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="slate"><span><b>Prod.</b> AI short-form video</span><span><b>Loc.</b> Cairo, Egypt</span><span><b>Lang.</b> Arabic · English</span></div>
+    <h1>Ayman Amer</h1>
+    <p class="role">AI Video Creator &amp; Storyteller</p>
+    <p class="intro">I write, prompt, generate and edit short videos that tell a story in under a minute. Each piece opens with a hook, builds through a few scenes and ends on a moment that stays with you. Most of my work is made in Arabic for Arab audiences.</p>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/aymanamer87/" target="_blank" rel="noopener"><small>LinkedIn</small>aymanamer87 ↗</a>
+    </div>
+  </header>
+
+
+  <section aria-labelledby="er">
+    <div class="sh">
+      <span class="kicker">Campaign · 5 Reels · 9:16</span>
+      <h2 id="er">Egypt Remembers <span class="ar" lang="ar">مصر فاكرة</span></h2>
+      <p>An awareness series on violent attacks in Egypt's modern history. Each Reel is released on the anniversary of an attack to honor the victims and keep their stories in public memory.</p>
+    </div>
+    <div class="rail">
+      <figure>
+        <div class="screen"><video src="v/botroseya.mp4" poster="v/botroseya.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><span class="t">Botroseya Church</span><span class="ar" lang="ar">الكنيسة البطرسية</span><span class="meta"><span>11 Dec 2016</span><span>0:28</span></span></figcaption>
+      </figure>
+      <figure>
+        <div class="screen"><video src="v/palm-sunday.mp4" poster="v/palm-sunday.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><span class="t">Palm Sunday</span><span class="ar" lang="ar">أحد الشعانين</span><span class="meta"><span>9 Apr 2017</span><span>0:34</span></span></figcaption>
+      </figure>
+      <figure>
+        <div class="screen"><video src="v/minya.mp4" poster="v/minya.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><span class="t">Minya</span><span class="ar" lang="ar">المنيا</span><span class="meta"><span>2 Nov 2018</span><span>0:32</span></span></figcaption>
+      </figure>
+      <figure>
+        <div class="screen"><video src="v/arish.mp4" poster="v/arish.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><span class="t">Arish Patrol</span><span class="ar" lang="ar">شمال سيناء</span><span class="meta"><span>3 Nov 2012</span><span>0:27</span></span></figcaption>
+      </figure>
+      <figure>
+        <div class="screen"><video src="v/mosque-church.mp4" poster="v/mosque-church.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><span class="t">Mosque and Church</span><span class="ar" lang="ar">ضربوا المسجد والكنيسة</span><span class="meta"><span>Series piece</span><span>0:34</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="sf">
+    <div class="sh">
+      <span class="kicker">Promos and short films</span>
+      <h2 id="sf">Stories</h2>
+    </div>
+    <div class="films">
+      <article class="film">
+        <div class="screen wide"><video src="v/3nglizy.mp4" poster="v/3nglizy.jpg" controls playsinline preload="none"></video></div>
+        <div class="copy">
+          <span class="meta"><span>0:28</span><span>16:9</span><span>Arabic</span></span>
+          <h3>3nglizy Brand Promo</h3>
+          <p>A motion-graphics promo for 3nglizy, an English-learning brand that explains common mistakes in Egyptian Arabic. It opens on the problem (courses that all look the same), shows the product in action, and lands on the logo.</p>
+          <div class="tags"><span>Product promo</span><span>Motion graphics</span><span>HyperFrames</span></div>
+        </div>
+      </article>
+      <article class="film">
+        <div class="screen wide"><video src="v/mental-health.mp4" poster="v/mental-health.jpg" controls playsinline preload="none"></video></div>
+        <div class="copy">
+          <span class="meta"><span>1:14</span><span>16:9</span><span>Arabic</span></span>
+          <h3>Mental Health Awareness</h3>
+          <p>A multi-scene film set in everyday Arab life: a train, an office, a family home and a hospital ward. It follows how stress that goes unspoken builds into a crisis, and why reaching out early matters.</p>
+          <div class="tags"><span>Campaign</span><span>Veo</span><span>Multi-scene</span></div>
+        </div>
+      </article>
+      <article class="film">
+        <div class="screen tv"><video src="v/noir-crime.mp4" poster="v/noir-crime.jpg" controls playsinline preload="none"></video></div>
+        <div class="copy">
+          <span class="meta"><span>0:35</span><span>Black and white</span></span>
+          <h3>Crime Short</h3>
+          <p>A noir story told in hard monochrome, close-up details and a twist ending, with the same characters held consistent from shot to shot.</p>
+          <div class="tags"><span>Noir</span><span>Character consistency</span></div>
+        </div>
+      </article>
+      <article class="film">
+        <div class="screen tv"><video src="v/street-drama.mp4" poster="v/street-drama.jpg" controls playsinline preload="none"></video></div>
+        <div class="copy">
+          <span class="meta"><span>0:56</span><span>Black and white</span></span>
+          <h3>Street Drama</h3>
+          <p>A gritty neighbourhood coming-of-age story carried by atmosphere and imagery rather than dialogue: night streets, a family table, a boy counting money.</p>
+          <div class="tags"><span>Drama</span><span>Visual storytelling</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="tk">
+    <div class="sh"><span class="kicker">Toolkit</span><h2 id="tk">How it's made</h2></div>
+    <div class="kit"><span>Veo 3</span><span>Kling</span><span>Seedance</span><span>Higgsfield</span><span>HyperFrames</span><span>ElevenLabs</span><span>Adobe Premiere Pro</span><span>CapCut</span><span>ChatGPT · Claude for scripts</span></div>
+  </section>
+
+  <footer><span>Ayman Amer · AI Video Creator</span><span>Cairo · Remote</span></footer>
+</div>
+
+<script>
+document.addEventListener('play',function(e){
+  document.querySelectorAll('video').forEach(function(v){ if(v!==e.target && !v.paused) v.pause(); });
+},true);
+</script>
+
+</body>
+</html>
