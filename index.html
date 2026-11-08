@@ -73,6 +73,24 @@ video{display:block;width:100%;height:100%;object-fit:cover;background:var(--fra
 .tags span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:3px 7px;color:var(--ink)}
 @media (max-width:760px){.film{grid-template-columns:minmax(0,1fr);gap:16px}}
 
+/* Websites */
+.sites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.site{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);text-decoration:none;color:inherit;transition:border-color .2s}
+.site:hover{border-color:var(--brass)}
+.site .mark{display:grid;place-items:center;gap:6px;aspect-ratio:16/8;background:var(--frame);color:#f3efe6;padding:20px;text-align:center}
+.site .mark b{font-family:var(--arabic);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.2;direction:rtl}
+.site .mark span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.site .mark.er{background:linear-gradient(160deg,#2a0f10,#0d0606)}
+.site .mark.er b{color:#f2e3c9}
+.site .mark.bb{background:linear-gradient(160deg,#0f2a3a,#071319)}
+.site .mark.bb b{color:#d9efe9}
+.site .body{display:grid;gap:10px;padding:20px;align-content:start;min-width:0}
+.site h3{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,34px);line-height:.95;text-transform:uppercase;margin:0}
+.site p{margin:0;color:var(--muted)}
+.site .go{font-family:var(--mono);font-size:13px;color:var(--brass)}
+.status{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:3px;padding:3px 7px;background:var(--brass);color:var(--bg)}
+@media (max-width:700px){.sites{grid-template-columns:minmax(0,1fr)}}
+
 /* Toolkit strip */
 .kit{display:flex;flex-wrap:wrap;gap:8px 10px;font-size:15px}
 .kit span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 12px}
@@ -98,7 +116,7 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
     <div class="sh">
       <span class="kicker">Campaign · 5 Reels · 9:16</span>
       <h2 id="er">Egypt Remembers <span class="ar" lang="ar">مصر فاكرة</span></h2>
-      <p>An awareness series on violent attacks in Egypt's modern history. Each Reel is released on the anniversary of an attack to honor the victims and keep their stories in public memory.</p>
+      <p>An awareness series on violent attacks in Egypt's modern history, made for <a href="https://egyptremembers.org/" target="_blank" rel="noopener">egyptremembers.org</a>. Each Reel is released on the anniversary of an attack to honor the victims and keep their stories in public memory.</p>
     </div>
     <div class="rail">
       <figure>
@@ -166,6 +184,34 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
           <div class="tags"><span>Drama</span><span>Visual storytelling</span></div>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ws">
+    <div class="sh">
+      <span class="kicker">Websites · Arabic and English</span>
+      <h2 id="ws">Platforms I Built</h2>
+      <p>Content platforms I designed, wrote and launched myself, from the idea and brand to the published site.</p>
+    </div>
+    <div class="sites">
+      <a class="site" href="https://egyptremembers.org/" target="_blank" rel="noopener">
+        <div class="mark er"><b lang="ar">مصر فاكرة</b><span>egyptremembers.org</span></div>
+        <div class="body">
+          <span class="meta"><span>Live</span><span>Arabic · English</span></span>
+          <h3>Egypt Remembers</h3>
+          <p>A bilingual, sourced record of terrorist attacks in Egypt since 2011, with a page for every attack, a memorial of victims' names, a map and statistics. The Reels series above grew out of it.</p>
+          <span class="go">Visit egyptremembers.org ↗</span>
+        </div>
+      </a>
+      <a class="site" href="https://beladbarra.com/" target="_blank" rel="noopener">
+        <div class="mark bb"><b lang="ar">بلاد برة</b><span>beladbarra.com</span></div>
+        <div class="body">
+          <span class="meta"><span class="status">In progress</span><span>Arabic</span></span>
+          <h3>Belad Barra</h3>
+          <p>An Arabic guide to studying, working and living abroad, starting with Germany. I built the brand, the site and the first guides, and I'm growing it country by country.</p>
+          <span class="go">Visit beladbarra.com ↗</span>
+        </div>
+      </a>
     </div>
   </section>
 
