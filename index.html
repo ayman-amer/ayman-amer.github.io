@@ -73,6 +73,20 @@ video{display:block;width:100%;height:100%;object-fit:cover;background:var(--fra
 .tags span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:3px 7px;color:var(--ink)}
 @media (max-width:760px){.film{grid-template-columns:minmax(0,1fr);gap:16px}}
 
+/* Tabs */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line);margin-top:-24px}
+.tabs a{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:6px 14px;border-radius:4px;display:inline-flex;gap:8px;align-items:baseline}
+.tabs a span{font-family:var(--mono);font-weight:400;font-size:12px}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.panel{display:grid;gap:56px}
+.site .shot{aspect-ratio:16/9;background:var(--frame);overflow:hidden}
+.site .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease}
+.site:hover .shot img{transform:scale(1.02)}
+.site .mark{aspect-ratio:16/9}
+@media (prefers-reduced-motion:reduce){.site .shot img{transition:none}}
+
 /* Websites */
 .sites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .site{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);text-decoration:none;color:inherit;transition:border-color .2s}
@@ -112,6 +126,12 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
   </header>
 
 
+  <nav class="tabs" aria-label="Portfolio sections">
+    <a href="#videos" data-tab="videos">Videos <span>9</span></a>
+    <a href="#websites" data-tab="websites">Websites <span>2</span></a>
+  </nav>
+
+  <div class="panel" data-panel="videos">
   <section aria-labelledby="er">
     <div class="sh">
       <span class="kicker">Campaign · 5 Reels · 9:16</span>
@@ -187,6 +207,13 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
     </div>
   </section>
 
+  <section aria-labelledby="tk">
+    <div class="sh"><span class="kicker">Toolkit</span><h2 id="tk">How it's made</h2></div>
+    <div class="kit"><span>Veo 3</span><span>Kling</span><span>Seedance</span><span>Higgsfield</span><span>HyperFrames</span><span>ElevenLabs</span><span>Adobe Premiere Pro</span><span>CapCut</span><span>ChatGPT · Claude for scripts</span></div>
+  </section>
+  </div>
+
+  <div class="panel" data-panel="websites">
   <section aria-labelledby="ws">
     <div class="sh">
       <span class="kicker">Websites · Arabic and English</span>
@@ -195,11 +222,11 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
     </div>
     <div class="sites">
       <a class="site" href="https://egyptremembers.org/" target="_blank" rel="noopener">
-        <div class="mark er"><b lang="ar">مصر فاكرة</b><span>egyptremembers.org</span></div>
+        <div class="shot"><img src="v/site-egyptremembers.jpg" alt="Egypt Remembers homepage: a glowing map of attack sites across Egypt beside the headline and totals" loading="lazy"></div>
         <div class="body">
           <span class="meta"><span>Live</span><span>Arabic · English</span></span>
           <h3>Egypt Remembers</h3>
-          <p>A bilingual, sourced record of terrorist attacks in Egypt since 2011, with a page for every attack, a memorial of victims' names, a map and statistics. The Reels series above grew out of it.</p>
+          <p>A bilingual, sourced record of terrorist attacks in Egypt since 2011, with a page for every attack, a memorial of victims' names, a map and statistics. The Egypt Remembers Reels grew out of it.</p>
           <span class="go">Visit egyptremembers.org ↗</span>
         </div>
       </a>
@@ -214,15 +241,27 @@ footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono)
       </a>
     </div>
   </section>
-
-  <section aria-labelledby="tk">
-    <div class="sh"><span class="kicker">Toolkit</span><h2 id="tk">How it's made</h2></div>
-    <div class="kit"><span>Veo 3</span><span>Kling</span><span>Seedance</span><span>Higgsfield</span><span>HyperFrames</span><span>ElevenLabs</span><span>Adobe Premiere Pro</span><span>CapCut</span><span>ChatGPT · Claude for scripts</span></div>
-  </section>
+  </div>
 
   <footer><span>Ayman Amer · AI Video Creator</span><span>Cairo · Remote</span></footer>
 </div>
 
+<script>
+(function(){
+  var tabs=document.querySelectorAll('[data-tab]'),panels=document.querySelectorAll('[data-panel]');
+  function show(){
+    var h=(location.hash||'').slice(1); if(h!=='websites') h='videos';
+    panels.forEach(function(p){p.hidden=p.dataset.panel!==h;});
+    tabs.forEach(function(t){ if(t.dataset.tab===h) t.setAttribute('aria-current','page'); else t.removeAttribute('aria-current');});
+    document.querySelectorAll('video').forEach(function(v){ if(!v.closest('[data-panel]:not([hidden])')) v.pause(); });
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(e){
+    e.preventDefault(); if(location.hash!=='#'+t.dataset.tab) history.replaceState(null,'','#'+t.dataset.tab); show();
+    var nav=document.querySelector('.tabs'); if(nav.getBoundingClientRect().top<0||window.scrollY>nav.offsetTop) window.scrollTo({top:nav.offsetTop-8});
+  });});
+  window.addEventListener('hashchange',show); show();
+})();
+</script>
 <script>
 document.addEventListener('play',function(e){
   document.querySelectorAll('video').forEach(function(v){ if(v!==e.target && !v.paused) v.pause(); });
